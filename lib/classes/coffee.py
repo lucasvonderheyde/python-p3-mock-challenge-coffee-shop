@@ -4,10 +4,20 @@ class Coffee:
         self.orders = []
     
     def get_customers(self):
-        pass
+        customers = []
+        for order in self.orders:
+            customers.append(order.customer)
+        return customers
     
     def num_orders(self):
-        pass
+        return len(self.orders)
     
     def average_price(self):
-        pass
+        avg_price = 0
+        for order in self.orders:
+            avg_price += order.price
+        return avg_price/len(self.orders)
+
+    # @property
+    # def name(self):
+    #     return self._name
